@@ -1,0 +1,425 @@
+/* ===== CSS Reset & Global Styles ===== */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --purple-primary: #6C25FF;
+  --purple-light: #CBADFF;
+  --purple-bg: #f0e6ff;
+  --gray-light: #e8e8e8;
+  --gray-bg: #f7f8f9;
+  --gray-text: #87898e;
+  --gray-border: #cbcbcb;
+  --gray-button: #cbcbcb;
+  --dark-text: #1d2226;
+  --white: #ffffff;
+  --yellow: #f4c430;
+  --font-family: 'Rubik', sans-serif;
+}
+
+html, body {
+  height: 100%;
+  font-family: var(--font-family);
+  background: #f0f0f0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#root {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 20px;
+}
+
+/* ===== Mobile Frame Container ===== */
+.mobile-frame {
+  width: 100%;
+  max-width: 420px;
+  min-height: 700px;
+  background: var(--white);
+  border-radius: 16px;
+  border: 1px solid #e0e0e0;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.06);
+}
+
+/* ===== Welcome / Landing Page ===== */
+.welcome-page {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  min-height: 700px;
+}
+
+.welcome-hero {
+  flex: 1;
+  position: relative;
+  overflow: hidden;
+  min-height: 380px;
+}
+
+.circle-dot {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: var(--yellow);
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--white);
+  box-shadow: 0 2px 6px rgba(244, 196, 48, 0.35);
+}
+
+.welcome-content {
+  padding: 28px 24px 32px;
+}
+
+.welcome-content h1 {
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--dark-text);
+  line-height: 1.25;
+  margin-bottom: 10px;
+}
+
+.welcome-content p {
+  font-size: 16px;
+  color: var(--gray-text);
+  line-height: 1.5;
+  margin-bottom: 24px;
+}
+
+.btn {
+  display: block;
+  width: 100%;
+  padding: 14px;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 500;
+  font-family: var(--font-family);
+  cursor: pointer;
+  text-align: center;
+  transition: opacity 0.2s ease, transform 0.1s ease;
+  text-decoration: none;
+}
+
+.btn:active {
+  transform: scale(0.98);
+}
+
+.btn-primary {
+  background: var(--purple-primary);
+  color: var(--white);
+}
+
+.btn-primary:hover {
+  opacity: 0.92;
+}
+
+.btn-secondary {
+  background: var(--purple-light);
+  color: var(--dark-text);
+  margin-top: 12px;
+}
+
+.btn-secondary:hover {
+  opacity: 0.85;
+}
+
+.btn-gray {
+  background: var(--gray-button);
+  color: var(--white);
+}
+
+.btn-gray:hover {
+  opacity: 0.85;
+}
+
+/* ===== Login Page ===== */
+.login-page {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  min-height: 700px;
+  padding: 32px 24px;
+}
+
+.login-page h1 {
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--dark-text);
+  line-height: 1.25;
+  margin-bottom: 10px;
+}
+
+.login-page .subtitle {
+  font-size: 16px;
+  color: var(--gray-text);
+  line-height: 1.5;
+  margin-bottom: 28px;
+}
+
+/* ===== Form Styles ===== */
+.form-group {
+  position: relative;
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  position: absolute;
+  top: -9px;
+  left: 12px;
+  background: var(--white);
+  padding: 0 6px;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--purple-primary);
+  z-index: 1;
+}
+
+.form-group label .required {
+  color: #e74c3c;
+  margin-left: 1px;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 14px 16px;
+  border: 1px solid var(--gray-border);
+  border-radius: 8px;
+  font-size: 15px;
+  font-family: var(--font-family);
+  color: var(--dark-text);
+  background: var(--white);
+  outline: none;
+  transition: border-color 0.2s ease;
+}
+
+.form-group input:focus {
+  border-color: var(--purple-primary);
+}
+
+.form-group input::placeholder {
+  color: var(--gray-text);
+  font-weight: 400;
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.login-form .btn {
+  margin-top: 8px;
+}
+
+/* ===== Create Account Page ===== */
+.create-account-page {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  min-height: 700px;
+  padding: 32px 24px;
+}
+
+.create-account-page h1 {
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--dark-text);
+  line-height: 1.25;
+  margin-bottom: 24px;
+}
+
+.agency-group {
+  margin-bottom: 24px;
+}
+
+.agency-group .agency-label {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--dark-text);
+  margin-bottom: 12px;
+  display: block;
+}
+
+.agency-label .required {
+  color: #e74c3c;
+  margin-left: 1px;
+}
+
+.radio-group {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+}
+
+.radio-option {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+}
+
+.radio-option input[type="radio"] {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 22px;
+  height: 22px;
+  border: 2px solid var(--gray-border);
+  border-radius: 50%;
+  position: relative;
+  cursor: pointer;
+  transition: border-color 0.2s ease;
+}
+
+.radio-option input[type="radio"]:checked {
+  border-color: var(--purple-primary);
+}
+
+.radio-option input[type="radio"]:checked::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--purple-primary);
+}
+
+.radio-option span {
+  font-size: 15px;
+  color: var(--dark-text);
+}
+
+.create-form {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.create-form .btn {
+  margin-top: auto;
+}
+
+/* ===== Account Settings Page ===== */
+.account-settings-page {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  min-height: 700px;
+}
+
+.account-header {
+  padding: 24px 24px 16px;
+  border-bottom: 1px solid #e8e8e8;
+}
+
+.account-header h1 {
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--dark-text);
+}
+
+.profile-section {
+  padding: 24px;
+}
+
+.profile-info {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.profile-avatar {
+  position: relative;
+  width: 72px;
+  height: 72px;
+  flex-shrink: 0;
+}
+
+.profile-avatar img {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.camera-icon {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 24px;
+  height: 24px;
+  background: var(--purple-primary);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid var(--white);
+  cursor: pointer;
+}
+
+.camera-icon svg {
+  width: 12px;
+  height: 12px;
+  fill: var(--white);
+}
+
+.profile-details h2 {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--dark-text);
+  margin-bottom: 2px;
+}
+
+.profile-details p {
+  font-size: 14px;
+  color: var(--gray-text);
+}
+
+.profile-bio {
+  font-size: 14px;
+  color: #444;
+  line-height: 1.65;
+}
+
+.dashed-border {
+  flex: 1;
+  border-top: 2px dashed #d0d0d0;
+  margin: 0 24px;
+  margin-top: auto;
+  margin-bottom: 24px;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 480px) {
+  #root {
+    padding: 0;
+    align-items: stretch;
+  }
+
+  .mobile-frame {
+    max-width: 100%;
+    min-height: 100vh;
+    border-radius: 0;
+    border: none;
+    box-shadow: none;
+  }
+}
