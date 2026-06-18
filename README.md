@@ -1,16 +1,88 @@
-# React + Vite
+# PopX – React App (Educase Assignment)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A mobile-first React application built with Vite for the Educase India assignment. The app replicates the provided Figma/design screens for **PopX** — a user onboarding flow with Welcome, Login, Create Account, and Account Settings pages.
 
-Currently, two official plugins are available:
+## Live Demo
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+> _Deploy link will be added once hosted on Netlify._
 
-## React Compiler
+## Screens
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+| Screen | Route | Description |
+|---|---|---|
+| **Welcome** | `/` | Landing page with "Create Account" and "Already Registered? Login" buttons |
+| **Login** | `/login` | Email & password sign-in form with grey Login button |
+| **Create Account** | `/create-account` | Registration form with Full Name, Phone, Email, Password, Company, and Agency radio selection |
+| **Account Settings** | `/account-settings` | Profile page displaying user's name, email, profile photo, bio, and a camera icon overlay |
 
-## Expanding the ESLint configuration
+## Features
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- **React Router** for client-side navigation between all 4 screens
+- **Shared User Context** — name and email entered during registration/login are dynamically displayed on the Account Settings page
+- **Mobile-first responsive design** matching the provided mockups exactly
+- **Custom radio buttons** and floating label form inputs
+- **Netlify-ready** with `_redirects` for SPA routing support
+
+## Tech Stack
+
+- **React 19** (via Vite)
+- **React Router DOM** for routing
+- **Vanilla CSS** — no CSS framework, fully custom styles
+- **Google Fonts** — Rubik
+
+## Project Structure
+
+```
+src/
+├── context/
+│   └── UserContext.jsx      # Shared user state (name, email)
+├── pages/
+│   ├── Welcome.jsx          # Landing / home screen
+│   ├── Login.jsx            # Sign-in screen
+│   ├── CreateAccount.jsx    # Registration screen
+│   └── AccountSettings.jsx  # Profile / settings screen
+├── App.jsx                  # Routes & layout
+├── main.jsx                 # Entry point with BrowserRouter
+└── index.css                # All styles
+```
+
+## Getting Started
+
+### Prerequisites
+
+- Node.js (v18+)
+- npm
+
+### Install & Run
+
+```bash
+# Install dependencies
+npm install
+
+# Start development server
+npm run dev
+```
+
+The app will be available at **http://localhost:5173/**
+
+### Build for Production
+
+```bash
+npm run build
+```
+
+Output will be in the `dist/` folder, ready for deployment.
+
+## Deployment (Netlify)
+
+1. Push code to GitHub
+2. Connect the repo to Netlify
+3. Set build command: `npm run build`
+4. Set publish directory: `dist`
+5. The `public/_redirects` file handles SPA routing automatically
+
+## Assignment Details
+
+- **Assignment by:** Educase India
+- **Framework:** React JS (Vite)
+- **Design:** Pixel-accurate implementation of provided mockup screens

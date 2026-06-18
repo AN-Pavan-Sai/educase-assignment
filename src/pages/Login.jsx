@@ -1,14 +1,18 @@
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
+import { useUser } from '../context/UserContext'
 
 function Login() {
   const navigate = useNavigate()
+  const { setUser } = useUser()
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
 
   const handleLogin = (e) => {
     e.preventDefault()
-    // Navigate to account settings on login
+    // Use email prefix as display name for login
+    const name = email.split('@')[0]
+    setUser({ fullName: name, email: email })
     navigate('/account-settings')
   }
 

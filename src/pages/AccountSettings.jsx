@@ -1,4 +1,8 @@
+import { useUser } from '../context/UserContext'
+
 function AccountSettings() {
+  const { user } = useUser()
+
   return (
     <div className="account-settings-page">
       <div className="account-header">
@@ -8,7 +12,7 @@ function AccountSettings() {
       <div className="profile-section">
         <div className="profile-info">
           <div className="profile-avatar">
-            <img src="/profile.png" alt="Marry Doe profile" />
+            <img src="/profile.png" alt={`${user.fullName} profile`} />
             <div className="camera-icon">
               <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                 <path d="M12 15.2C13.7673 15.2 15.2 13.7673 15.2 12C15.2 10.2327 13.7673 8.8 12 8.8C10.2327 8.8 8.8 10.2327 8.8 12C8.8 13.7673 10.2327 15.2 12 15.2Z" />
@@ -17,8 +21,8 @@ function AccountSettings() {
             </div>
           </div>
           <div className="profile-details">
-            <h2>Marry Doe</h2>
-            <p>Marry@Gmail.Com</p>
+            <h2>{user.fullName}</h2>
+            <p>{user.email}</p>
           </div>
         </div>
 

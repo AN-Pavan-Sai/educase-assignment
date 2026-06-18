@@ -1,8 +1,10 @@
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
+import { useUser } from '../context/UserContext'
 
 function CreateAccount() {
   const navigate = useNavigate()
+  const { setUser } = useUser()
   const [formData, setFormData] = useState({
     fullName: '',
     phoneNumber: '',
@@ -19,7 +21,7 @@ function CreateAccount() {
 
   const handleSubmit = (e) => {
     e.preventDefault()
-    // Navigate to account settings after creating account
+    setUser({ fullName: formData.fullName, email: formData.email })
     navigate('/account-settings')
   }
 
